@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('add-car');
+})->name('addCar');
+
+Route::post('/add_cars', [App\Http\Controllers\CarController::class, 'create']);
+Route::get('/get_cars', [App\Http\Controllers\CarController::class, 'index']);
