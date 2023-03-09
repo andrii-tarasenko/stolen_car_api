@@ -36,15 +36,15 @@ services:
             - stolen_car_api-network
 
     #MySQL Service
-    db_stolen_car_api:
+    db_stolen_car:
         image: mysql:8.0
-        container_name: db_stolen_car_api
+        container_name: db_stolen_car
         restart: unless-stopped
         tty: true
         ports:
             - "3306:3306"
         environment:
-            MYSQL_DATABASE: stolen_car_api
+            MYSQL_DATABASE: stolen_car_api_db
             MYSQL_ROOT_PASSWORD: stolen_car_api
             MYSQL_USER: andrii
             MYSQL_PASSWORD: stolen_car_api
@@ -56,7 +56,7 @@ services:
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         volumes:
-            - db_data_stolen_car_api:/var/lib/mysql/
+            - data_stolen_cars:/var/lib/mysql/
             - ./config_server/mysql/my.cnf:/etc/mysql/my.cnf
         networks:
             - stolen_car_api-network
@@ -89,7 +89,7 @@ networks:
         driver: bridge
 #Volumes
 volumes:
-    db_data_stolen_car_api:
+    data_stolen_cars:
         driver: local
 
 
