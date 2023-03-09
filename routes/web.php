@@ -21,5 +21,5 @@ Route::get('/', function () {
     return view('add-car');
 })->name('addCar');
 
-Route::post('/add_cars', [App\Http\Controllers\CarController::class, 'create']);
-Route::get('/get_cars', [App\Http\Controllers\CarController::class, 'index']);
+Route::post('/api/add_cars', [App\Http\Controllers\CarController::class, 'create']);
+Route::get('/api/get_cars', [App\Http\Controllers\CarController::class, 'index']);
