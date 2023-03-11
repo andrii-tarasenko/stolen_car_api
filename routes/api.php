@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CarController;
+use App\Http\Controllers\API\UpdateParamsCarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,7 @@ Route::post('/add/stolen_cars', [CarController::class, 'store']);
 Route::get('/get/stolen_cars', [CarController::class, 'index']);
 Route::put('/update/stolen_cars/{id}', [CarController::class, 'update']);
 Route::delete('/delete/stolen_cars/{id}', [CarController::class, 'destroy']);
-Route::get('/export/stolen_cars', [CarController::class, 'export']);
-Route::get('/autocomplete', [CarController::class, 'autocomplete']);
-Route::get('/makes', [CarController::class, 'getMakes']);
-Route::get('/makes/{make_id}/models', [CarController::class, 'getModels']);
+Route::get('/export/stolen_cars', [CarController::class, 'exportToExcel']);
+Route::get('/update', [UpdateParamsCarController::class, 'updateModelAndMakes']);
+Route::get('/autocomplete/{make}', [CarController::class, 'autocomplete']);
 

@@ -25,6 +25,8 @@ services:
         image: nginx:alpine
         container_name: webserver_stolen_car_api
         restart: unless-stopped
+        environment:
+            - proxy_read_timeout=13320s
         tty: true
         ports:
             - "80:80"
