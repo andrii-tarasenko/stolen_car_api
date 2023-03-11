@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 /**
  * Class StolenCars
  *
- * @package App\Models
+ * @package App\carsManufacturer
  *
  * @property int $id ID of the car record in the database
  * @property string $name Car make
