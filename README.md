@@ -43,7 +43,7 @@ Url for api
     - id of row in the table
 7. autocomplete makes and get models - http://localhost/api/autocomplete/{make};
    a) paramenters:
-    - make - make_id
+    - make (ford of for..)
 
 All endPoints was write in App\Http\Controllers\API\CarController exept autocomplete(App\Http\Controllers\API\CarController\UpdateParamsCarController)
 Updating the database is performed once a month using a scheduler and a created command. It can also be done remotely by request.
